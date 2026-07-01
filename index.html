@@ -276,10 +276,15 @@
                                     required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Servicio</label>
-                                <p class="form-text" id="servicioSeleccionadoTexto">Selecciona un servicio para
-                                    agendarlo.</p>
-                                <input type="hidden" id="servicioSeleccionado" name="servicioSeleccionado" required>
+                                <label for="servicioSeleccionado" class="form-label">Servicio</label>
+                                <select class="form-select" id="servicioSeleccionado" name="servicioSeleccionado" required>
+                                    <option value="">Selecciona un servicio</option>
+                                    <option value="Consulta General">Consulta General</option>
+                                    <option value="Vacunación y Desparasitación">Vacunación y Desparasitación</option>
+                                    <option value="Cirugía y Quirófano">Cirugía y Quirófano</option>
+                                    <option value="Laboratorio Clínico">Laboratorio Clínico</option>
+                                </select>
+                                <p class="form-text" id="servicioSeleccionadoTexto">Elige el servicio que deseas agendar.</p>
                             </div>
                             <div class="mb-3">
                                 <label for="mensaje" class="form-label">Mensaje</label>
@@ -333,6 +338,16 @@
         const servicioTexto = document.getElementById('servicioSeleccionadoTexto');
         const servicioInput = document.getElementById('servicioSeleccionado');
 
+        if (servicioInput) {
+            servicioInput.addEventListener('change', function () {
+                const servicio = this.value;
+                if (servicioTexto) {
+                    servicioTexto.textContent = servicio ? `Servicio seleccionado: ${servicio}` : 'Elige el servicio que deseas agendar.';
+                    servicioTexto.style.color = servicio ? '#1E3153' : '#6c757d';
+                }
+            });
+        }
+
         document.querySelectorAll('.tarjeta-link').forEach((link) => {
             link.addEventListener('click', function (event) {
                 event.preventDefault();
@@ -340,17 +355,13 @@
 
                 if (servicioInput) {
                     servicioInput.value = servicio;
+                    servicioInput.dispatchEvent(new Event('change'));
                 }
 
                 if (mensajeInput) {
                     if (!mensajeInput.value.trim()) {
                         mensajeInput.focus();
                     }
-                }
-
-                if (servicioTexto) {
-                    servicioTexto.textContent = `Servicio seleccionado: ${servicio}`;
-                    servicioTexto.style.color = '#1E3153';
                 }
 
                 document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth', block: 'start' });

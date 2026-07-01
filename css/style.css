@@ -617,3 +617,102 @@ a {
     }
 
 }
+
+@media (max-width:768px){
+
+    .hero-titulo{
+        font-size:2.7rem;
+        line-height:1.15;
+    }
+
+    .hero-subtitulo{
+        font-size:1.2rem;
+    }
+
+    .header-vet{
+        padding:35px 25px;
+    }
+
+    .header-vet h2{
+        font-size:2.3rem;
+        line-height:1.2;
+        letter-spacing:1px;
+    }
+
+    .header-vet p{
+        font-size:1.2rem;
+    }
+
+    .valor-card h3,
+    .tarjeta-content h3,
+    .beneficio-card h3{
+        font-size:1.55rem;
+    }
+
+    .testimonial-card p{
+        font-size:1.15rem;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+    }
+
+    .hero-content{
+        padding:28px 20px;
+    }
+
+    .tarjeta{
+        flex:0 1 100%;
+        max-width:100%;
+    }
+}
+
+@media (max-width:480px){
+
+    .contenedor-principal{
+        width:95%;
+        padding:20px;
+    }
+
+    .header-vet{
+        padding:25px 18px;
+    }
+
+    .header-vet h2{
+        font-size:2rem;
+        line-height:1.2;
+    }
+
+    .header-vet p{
+        font-size:1.05rem;
+        line-height:1.7;
+    }
+
+    .hero-titulo{
+        font-size:2.2rem;
+    }
+
+    .hero-subtitulo{
+        font-size:1.05rem;
+    }
+
+    .logo-veterinaria{
+        font-size:2rem !important;
+    }
+
+    .navbar-dark .navbar-nav .nav-link{
+        font-size:1.2rem !important;
+    }
+
+    .tarjeta-content h3,
+    .valor-card h3,
+    .beneficio-card h3{
+        font-size:1.35rem;
+    }
+
+    .tarjeta-content p,
+    .valor-card p,
+    .beneficio-card p{
+        font-size:1rem;
+    }
+}

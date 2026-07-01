@@ -389,6 +389,15 @@
             const explicacion = mensaje ? `Explicación del cliente: ${mensaje}` : 'Sin explicación adicional.';
             const text = encodeURIComponent(`Hola Healthy Pets, soy ${nombre}. Mi teléfono es ${telefono}. Mi mascota se llama ${mascota}. ${motivo} ${explicacion}`);
             window.open(`${base}?text=${text}`, '_blank');
+
+            document.getElementById('whatsappForm').reset();
+            if (servicioInput) {
+                servicioInput.value = '';
+            }
+            if (servicioTexto) {
+                servicioTexto.textContent = 'Elige el servicio que deseas agendar.';
+                servicioTexto.style.color = '#6c757d';
+            }
         });
     </script>
 </body>

@@ -13,6 +13,9 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
 body {
@@ -20,7 +23,8 @@ body {
     background: linear-gradient(180deg, var(--color-fondo) 0%, #c2c2c2 35%, var(--color-fondo-oscuro) 100%);
     color: var(--color-texto-oscuro);
     font-family: Georgia, serif;
-    font-size: 22px;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 * {
@@ -53,7 +57,7 @@ a {
 
 .navbar-dark .navbar-nav .nav-link {
     color: #ffffff;
-    font-size: 1.5rem !important;
+    font-size: 1.1rem !important;
     letter-spacing: 0.5px;
     padding: 14px 30px !important;
 }
